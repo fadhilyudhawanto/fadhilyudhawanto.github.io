@@ -1,0 +1,19 @@
+*
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body
+{
+    margin: 0;
+    background-color: #F8F8F8;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    padding: 0;
+}
