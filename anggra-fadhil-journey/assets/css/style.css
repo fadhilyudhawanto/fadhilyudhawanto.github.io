@@ -9,11 +9,411 @@
 body
 {
     margin: 0;
-    background-color: #F8F8F8;
-    color: rgba(0, 0, 0, 0.7);
+    background-color: #ffffff;
+    color: #737373;
     line-height: 20px;
     box-sizing: border-box;
     font-size: 14px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Abel", sans-serif;
     padding: 0;
+}
+
+#fp-nav
+{
+    z-index: 6
+}
+
+.loading_section
+{
+    opacity: 0;
+    visibility: hidden;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+    transition: all 1s ease;
+}
+
+.loading_section.active
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading_section img
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hwr
+{
+    font-family: 'Rouge Script', cursive;
+}
+
+section.section
+{
+    position: relative;
+}
+
+section.section.wbg::before
+{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+section.section.wbg-overlay::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: rgba(127, 127, 127, 0.4);
+    background-size: 2px 2px;
+    z-index: 2;
+}
+
+section.section .dom-container-floating
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 90%;
+    text-align: center;
+}
+
+.intro-section::before
+{
+    background-image: url('../img/af_5.JPG');
+    background-position: center;
+}
+
+.intro-section
+{
+    color: #ffffff;
+}
+
+.intro_title.hwr
+{
+    font-size: 120px;
+    line-height: 140px;
+}
+
+.intro_desc
+{
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.scroll_container
+{
+    position: absolute;
+    bottom: 4px;
+    z-index: 4;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    text-align: center;
+}
+
+.scroll_container a
+{
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.scroll_container img
+{
+    width: 20px;
+}
+
+.animated-arrow
+{
+    animation: updownarrow .5s ease infinite alternate;
+}
+
+.story_left, .invitation_left
+{
+    position: absolute;
+    left: 7%;
+    top: 50%;
+    width: 36%;
+    transform: translateY(-50%);
+    text-align: left;
+}
+
+.story_left .hwr,
+.engagement_right .hwr,
+.invitation_left .hwr
+{
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+.story_left p, .engagement_right p,
+.invitation_left p
+{
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.story_right,
+.invitation_right
+{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+}
+
+.story_right img,
+.engagement_left img,
+.invitation_right img
+{
+    max-width: 100%;
+    opacity: 0;
+    transition: opacity .5s ease;
+    transition-delay: .5s;
+}
+
+.story_section.active .story_right img,
+.engagement_section.active .engagement_left img,
+.invitation_section.active .invitation_right img
+{
+    transition: opacity 2s ease;
+    opacity: 1;
+    transition-delay: 1s;
+}
+
+.engagement_right
+{
+    position: absolute;
+    right: 8%;
+    width: 35%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.engagement_left
+{
+    position: absolute;
+    left: 7%;
+    width: 40%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ytb-play
+{
+    width: 100px!important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.engagement_left a
+{
+    display: inline-block;
+    transition: opacity .3s ease;
+    width: 100%;
+    position: relative;
+}
+
+.engagement_left a .img-ytb
+{
+    filter: blur(8px);
+}
+
+.engagement_left a:hover
+{
+    opacity: 1;
+}
+
+.engagement_left a:hover .img-ytb
+{
+    filter: none;
+}
+
+.engagement_left img
+{
+    width: 100%;
+}
+
+.invitation_title
+{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.invitation_desc
+{
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 12px;
+}
+
+.invitation_cta
+{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.invitation_cta > a
+{
+    display: inline-block;
+    text-decoration: none;
+    
+    font-weight: bold;
+    color: #737373;
+    border: 1px solid #e0e0e0;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    vertical-align: middle;
+    transition: all .2s ease;
+}
+
+.invitation_cta > a:hover
+{
+    color: #9e304c;
+    border-color: #9e304c;
+}
+
+.invitation_cta > a > img
+{
+    width: 14px;
+    vertical-align: middle;
+    margin-left: 3px;
+    animation: updownarrow .5s ease alternate infinite;
+}
+
+.invitation_cta > span
+{
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+    vertical-align: middle;
+}
+
+.invitation_cta > img
+{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+}
+
+@keyframes updownarrow
+{
+    from
+    {
+        transform: translateY(0);
+    }
+    to
+    {
+        transform: translateY(-10px);
+    }
+}
+
+@media(max-width: 1199px)
+{
+
+}
+
+@media(max-width: 1024px)
+{
+    .engagement_left a .img-ytb
+    {
+        filter: none;
+    }
+    section.section:nth-child(n+2), section.section:nth-child(n+2) .fp-tableCell
+    {
+        height: auto!important;
+    }
+    .story_left, .engagement_right
+    {
+        position: static;
+        width: 100%;
+        text-align: center;
+        padding: 60px 16px 0px;
+        max-width: 700px;
+        margin: auto;
+        transform: none;
+    }
+
+    .story_right, .engagement_left
+    {
+        position: static;
+        transform: none;
+        margin: auto;
+        width: 100%;
+        max-width: 480px;
+        padding: 0px 16px 60px;
+    }
+
+    .story_right img, .engagement_left img
+    {
+        opacity: 1;
+        transition-delay: 0;
+    }
+}
+
+@media(max-width: 768px)
+{
+
+}
+
+@media(max-width: 680px)
+{
+
+}
+
+@media(max-width: 600px)
+{
+    .intro_title.hwr
+    {
+        font-size: 80px;
+        line-height: 95px;
+        margin: 0 auto 20px;
+        max-width: 550px;
+    }
+}
+
+@media(max-width: 500px)
+{
+    .intro_title.hwr
+    {
+        font-size: 80px;
+        line-height: 90px;
+        margin: 0 auto 40px;
+        max-width: 200px;
+    }
+}
+
+@media(max-width: 420px)
+{
+
 }
